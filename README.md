@@ -32,13 +32,6 @@ BPL Dream Xi Cricket Team Builder is a React application that allows users to bu
   - Alerts users if the player has already been selected or if the team is full.
 - **Selected Players Display**: Shows selected players with detailed cards and includes a "Remove" button.
 - **Newsletter & Footer Sections**: Styled as per the Figma design.
-
 ---
 
-## **Installation**
-1. Clone the repository.
-2. Run `npm install` to install dependencies.
-3. Run `npm start` to start the application.
-
-
-#**Live Link**: 
+# **Live Link**:** https://bpl-dream-leauge-xi.netlify.app/ ** 
