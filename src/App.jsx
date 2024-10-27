@@ -1,23 +1,93 @@
-import React from 'react';
-import Navbar from './Components/Navbar';
-import Banner from './Components/Banner';
-import Footer from './Components/Footer';
-import Main from './Components/Main';
+import { ToastContainer } from "react-toastify";
+import Header from "./Components/Header/Header";
+import Main from "./Components/Main/Main";
+import Footer from './Components/Footer/Footer'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const App = () => {
+  const [coinBalance, setCoinBalance] = useState(0);
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
+
+  // Claim button function
+  function handlecCoin() {
+    setCoinBalance(coinBalance + 200000000);
+    toast.success("Claimed 200000000 coins!");
+  }
+
+  // Choose Player function
+  const choosePlayer = (player) => {
+    const biddingPrice = Number(player.biddingPrice);
+    const playerName = player.name;
+
+    // Check if the maximum number of players (6) has been reached
+    if (selectedPlayers.length >= 6) {
+      toast.error("You can select a maximum of 6 players!");
+      return;
+    }
+
+    // Check if the player is already selected
+    const isPlayerSelected = selectedPlayers.some(
+      (selectedPlayer) => selectedPlayer.name === playerName
+    );
+
+    if (isPlayerSelected) {
+      toast.error("This player is already selected!");
+      return;
+    }
+
+    if (coinBalance >= biddingPrice) {
+      setCoinBalance((prevBalance) => prevBalance - biddingPrice);
+      setSelectedPlayers((prevSelected) => [...prevSelected, player]);
+      toast.success(`${playerName} selected!`);
+    } else {
+      toast.error("Not enough coins to choose this player!");
+    }
+  };
+
+  // Remove Player function
+  const removePlayer = (player) => {
+    // Add the removed player's bidding price back to the coin balance
+    setCoinBalance((prevBalance) => prevBalance + Number(player.biddingPrice));
+
+    // Filter out the player from the selectedPlayers list
+    setSelectedPlayers((prevSelected) =>
+      prevSelected.filter((selectedPlayer) => selectedPlayer.name !== player.name)
+    );
+
+    toast.info(`${player.name} removed from selected players.`);
+  };
+
   return (
     <div>
-      {/* Navbar */}
-      <Navbar></Navbar>
-      {/* Banner */}
-      <Banner></Banner>
-      {/* main Sectiom */}
-      <Main></Main>
-      {/* Player Data */}
+      {/* Header */}
+      <Header coinBalance={coinBalance} handlecCoin={handlecCoin} />
+
+      {/* Main Section */}
+
+      <Main
+        removePlayer={removePlayer}
+        selectedPlayers={selectedPlayers}
+        choosePlayer={choosePlayer}
+        coinBalance={coinBalance}
+      />
 
       {/* Footer */}
       <Footer></Footer>
-      
+
+      {/* Toast Notification */}
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
