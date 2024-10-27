@@ -1,4 +1,8 @@
 /* eslint-disable react/prop-types */
+import bgShadow from '../../icons/bg-shadow.png'
+import bgCoin from '../../icons/coin.png'
+import bgBanner from '../../icons/banner-main.png'
+import bgLogo from '../../icons/logo.png'
 import React, { useState } from "react";
 
 
@@ -8,7 +12,7 @@ const Header = ({ coinBalance, setCoinBalance, handlecCoin }) => {
       <div className="w-full mx-auto z-50 top-0 fixed backdrop-blur-lg bg-white/70">
         <div className="navbar lg:px-24 my-2 ">
           <div className="navbar-start">
-            <img src="/src/icons/logo.png" alt="" />
+            <img src={bgLogo} alt="" />
           </div>
           <div className="navbar-end gap-10 ">
             <div className="hidden lg:flex">
@@ -36,16 +40,16 @@ const Header = ({ coinBalance, setCoinBalance, handlecCoin }) => {
 
             <div>
               <button className="btn border-gray-200 text-xl">
-                {coinBalance} Coin <img src="public/icons/coin.png" alt="" />{" "}
+                {coinBalance} Coin  <img src={bgCoin} alt="" />{" "}
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className=" my-28 mx-24 bg-black items-center w-11/12 lg:w-[1366px] bg-cover h-screen bg-[url('public/icons/bg-shadow.png')] bg-no-repeat rounded-3xl  lg:h-[33.5rem] mb-10">
+      <div  className=" my-28 mx-24 bg-black  items-center w-11/12 lg:w-[1366px] bg-cover h-screen  bg-no-repeat rounded-3xl  lg:h-[33.5rem] mb-10" style={{backgroundImage:`url(${bgShadow})`}}>
         <div className=" flex flex-col justify-center items-center text-center h-full space-y-6 py-5">
           <div>
-            <img src="public/icons/banner-main.png" alt="" />
+            <img src={bgBanner} alt="" />
           </div>
           <h1 className="text-white font-extrabold text-4xl">
             Assemble Your Ultimate Dream 11 Cricket Team

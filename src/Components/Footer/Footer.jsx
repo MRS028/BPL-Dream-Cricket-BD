@@ -1,10 +1,12 @@
+import bgShadow from '../../icons/bg-shadow.png'
+import logoFooter from '../../icons/logo-footer.png'
 const Footer = () => {
   return (
     <section>
       <footer className="footer bg-[#06091A] flex flex-col items-center mt-[300px] relative pt-72">
         <section className="absolute  bottom-[310px] border-2 p-4 border-yellow-50 rounded-3xl mb-24 mt-32 mx-auto w-[85%]">
         
-          <div className="bg-white bg-cover bg-[url('public/icons/bg-shadow.png')] bg-center min-h-[400px] lg:flex flex-col items-center gap-12 py-28 rounded-3xl w-full text-center border">
+          <div className="bg-white bg-cover bg-center min-h-[400px] lg:flex flex-col items-center gap-12 py-28 rounded-3xl w-full text-center border" style={{backgroundImage:`url(${bgShadow})`}}>
             <div>
               <h1 className="text-3xl text-[#131313] font-bold pb-5">
                 Subscribe to our Newsletter
@@ -27,7 +29,10 @@ const Footer = () => {
             </div>
           </div>
         </section>
-        <img src="public/icons/logo-footer.png" alt="" />
+        <img src={logoFooter} alt="" />
+
+
+
         <section className="footer lg:w-[85%] mx-auto justify-between items-center text-base-content px-10 pb-10 space-y-5">
           <nav className="text-[#FFFFFF99] w-72">
             <h6 className="font-bold text-white">About Us</h6>
