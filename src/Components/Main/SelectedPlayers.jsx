@@ -11,7 +11,7 @@ const SelectedPlayers = ({ removePlayer, handleAvailable, selectedPlayers }) => 
           {selectedPlayers.map((player, index) => (
             <div
               key={index}
-              className="flex justify-between mx-auto w-[95%]  shadow-xl p-5 lg:mx-24 my-8 lg:w-[1366px] border rounded"
+              className="flex justify-between mx-auto w-[95%]  shadow-xl p-5  my-8  border rounded"
             >
               <div className="flex items-center gap-6">
                 <img className="border w-20 h-20 rounded-full" src={player.image} alt="" />
