@@ -11,12 +11,12 @@ const SelectedPlayers = ({ removePlayer, handleAvailable, selectedPlayers }) => 
           {selectedPlayers.map((player, index) => (
             <div
               key={index}
-              className="flex justify-between p-5 lg:mx-24 my-5 lg:w-[1366px] border rounded"
+              className="flex justify-between mx-auto w-[95%]  shadow-xl p-5 lg:mx-24 my-8 lg:w-[1366px] border rounded"
             >
               <div className="flex items-center gap-6">
-                <img className="border w-20 h-20 rounded-2xl" src={player.image} alt="" />
+                <img className="border w-20 h-20 rounded-full" src={player.image} alt="" />
                 <div>
-                  <h1 className="font-semibold text-2xl">{player.name} </h1>
+                  <h1 className="font-semibold lg:text-2xl">{player.name} </h1>
                   <p className="font-semibold opacity-60">{player.role}</p>
                   <p className="font-semibold opacity-60">price: ${player.biddingPrice}</p>
                 </div>
@@ -36,10 +36,10 @@ const SelectedPlayers = ({ removePlayer, handleAvailable, selectedPlayers }) => 
         </div>
       )}
 
-      <div className="px-24 my-32 pb-10">
+      <div className="mx-11 lg:mx-0 lg:px-24 my-32 pb-10">
         <button
           onClick={handleAvailable}
-          className="btn relative inline-block text-xl rounded-md bg-[#E7FE29] text-black font-bold"
+          className="btn relative  h-auto inline-block text-xl rounded-md bg-[#E7FE29] text-black font-bold"
         >
           Add More Players
         </button>

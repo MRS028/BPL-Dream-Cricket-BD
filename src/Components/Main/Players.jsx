@@ -12,7 +12,7 @@ const Players = ({ choosePlayer }) => {
 
   return (
     <div className="my-20">
-      <div className="mx-20 my-10 grid grid-cols-1 lg:grid-cols-3 space-x-2 gap-y-5">
+      <div className="lg:mx-20 items-center md:grid-cols-2 my-10 grid grid-cols-1 lg:grid-cols-3 md:justify-center md:items-center lg:space-x-2 gap-y-6">
         {players.map((player) => (
           <div
             key={player.playerId}
@@ -65,7 +65,7 @@ const Players = ({ choosePlayer }) => {
                     <h1 className="font-bold ">
                       <button
                         onClick={() => choosePlayer(player)}
-                        className="border text-[#131313] text-center hover w-36 p-1 rounded transition-shadow duration-200 ease-linear hover:bg-lime-300"
+                        className="border text-[#131313] text-center hover w-36 p-1 rounded transition-shadow duration-200 ease-linear  hover:bg-[#E7FE29]"
                       >
                         Choose Player
                       </button>

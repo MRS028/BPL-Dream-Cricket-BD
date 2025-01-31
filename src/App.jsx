@@ -12,8 +12,8 @@ const App = () => {
 
   // Claim button function
   function handlecCoin() {
-    setCoinBalance(coinBalance + 200000000);
-    toast.success("Claimed 200000000 coins!");
+    setCoinBalance(coinBalance + 20000000);
+    toast.success("Congrats! Claimed 20000000 coins!");
   }
 
   // Choose Player function
@@ -33,16 +33,16 @@ const App = () => {
     );
 
     if (isPlayerSelected) {
-      toast.error("This player is already selected!");
+      toast.error(`${player.name} has already selected!`);
       return;
     }
 
     if (coinBalance >= biddingPrice) {
       setCoinBalance((prevBalance) => prevBalance - biddingPrice);
       setSelectedPlayers((prevSelected) => [...prevSelected, player]);
-      toast.success(`${playerName} selected!`);
+      toast.success(`Congrats! ${playerName} is now in your squad.`);
     } else {
-      toast.error("Not enough coins to choose this player!");
+      toast.error("Not enough coins to buy this player.Claim some credit.");
     }
   };
 
@@ -56,7 +56,7 @@ const App = () => {
       prevSelected.filter((selectedPlayer) => selectedPlayer.name !== player.name)
     );
 
-    toast.info(`${player.name} removed from selected players.`);
+    toast.info(`${player.name} removed from your squad.`);
   };
 
   return (

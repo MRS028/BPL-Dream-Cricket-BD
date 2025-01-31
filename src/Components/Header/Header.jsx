@@ -3,13 +3,13 @@ import bgShadow from '../../icons/bg-shadow.png'
 import bgCoin from '../../icons/coin.png'
 import bgBanner from '../../icons/banner-main.png'
 import bgLogo from '../../icons/logo.png'
-import React, { useState } from "react";
+
 
 
 const Header = ({ coinBalance, setCoinBalance, handlecCoin }) => {
   return (
     <section>
-      <div className="w-full mx-auto z-50 top-0 fixed backdrop-blur-lg bg-white/70">
+      <div className="w-screen md:w-[916px] lg:w-full mx-auto z-50 top-0 fixed backdrop-blur-lg bg-white/70">
         <div className="navbar lg:px-24 my-2 ">
           <div className="navbar-start">
             <img src={bgLogo} alt="" />
@@ -39,19 +39,19 @@ const Header = ({ coinBalance, setCoinBalance, handlecCoin }) => {
             </div>
 
             <div>
-              <button className="btn border-gray-200 text-xl">
-                {coinBalance} Coin  <img src={bgCoin} alt="" />{" "}
+              <button className="btn  border-gray-200 text-[16px] lg:text-xl">
+                {coinBalance} <span className='hidden lg:flex'></span>  <img src={bgCoin} alt="" />{" "}
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div  className=" my-28 mx-24 bg-black  items-center w-11/12 lg:w-[1366px] bg-cover h-screen  bg-no-repeat rounded-3xl  lg:h-[33.5rem] mb-10" style={{backgroundImage:`url(${bgShadow})`}}>
+      <div  className=" my-28 mx-5 p-2 md:mx-auto w-full bg-black  items-center md:w-11/12  bg-cover   bg-no-repeat rounded-3xl md:h-[33.5rem]  h-[] lg:h-[33.5rem] mb-10" style={{backgroundImage:`url(${bgShadow})`}}>
         <div className=" flex flex-col justify-center items-center text-center h-full space-y-6 py-5">
           <div>
             <img src={bgBanner} alt="" />
           </div>
-          <h1 className="text-white font-extrabold text-4xl">
+          <h1 className="text-white font-extrabold text-3xl lg:text-4xl">
             Assemble Your Ultimate Dream 11 Cricket Team
           </h1>
           <h3 className="font-bold text-2xl opacity-80 text-white">
